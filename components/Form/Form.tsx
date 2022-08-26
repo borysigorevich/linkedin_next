@@ -19,7 +19,7 @@ export const Form = () => {
 
     const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const response = await fetch('http://localhost:3000/api/posts', {
+        await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({
                 input,
@@ -33,8 +33,6 @@ export const Form = () => {
                 'Content-Type': 'application/json'
             }
         })
-
-        const data = await response.json()
 
         setModalOpen(false)
         setHandlePost(state => !state)

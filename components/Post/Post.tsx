@@ -65,6 +65,7 @@ export const Post = ({post, modalPost}: PostProps) => {
             <div className={`flex items-center px-2.5 cursor-pointer`}>
                 <div className={'relative h-10 w-10 rounded-full overflow-hidden cursor-pointer bg-white'}>
                     <Image
+                        loader={imgLoader}
                         src={post?.userImg}
                         layout={'fill'}
                         objectFit={'contain'}

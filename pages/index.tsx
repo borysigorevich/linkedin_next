@@ -1,9 +1,8 @@
-import type {NextPage, GetServerSideProps, InferGetServerSidePropsType} from 'next'
+import type { GetServerSideProps, InferGetServerSidePropsType} from 'next'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
-import {getSession, useSession} from 'next-auth/react'
+import {getSession} from 'next-auth/react'
 import {useRecoilState} from "recoil";
-import {signOut} from 'next-auth/react'
 import {AnimatePresence} from 'framer-motion'
 
 import {DashboardHeader, Feed, Modal, Sidebar, Widgets} from "@components";
@@ -45,8 +44,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
         props: {
             session,
-            posts: editedPosts,
-            articles: results.articles
+            posts: editedPosts || null,
+            articles: results.articles || null
         }
     }
 }

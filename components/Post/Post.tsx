@@ -94,7 +94,7 @@ export const Post = ({post, modalPost}: PostProps) => {
             </div>
 
             {post.input && (
-                <div className={'px-2.5 break-all md:break-normal'}>
+                <div className={'px-2.5 break-all md:break-normal whitespace-pre-wrap'}>
                     {modalPost || showInput
                         ? <p onClick={() => setShowInput(false)}>{post.input}</p>
                         : <p>
